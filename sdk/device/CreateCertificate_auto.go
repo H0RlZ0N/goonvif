@@ -7,9 +7,9 @@ package device
 import (
 	"context"
 	"github.com/juju/errors"
-	"github.com/use-go/onvif"
-	"github.com/use-go/onvif/sdk"
-	"github.com/use-go/onvif/device"
+	"github.com/H0RlZ0N/onvif"
+	"github.com/H0RlZ0N/onvif/sdk"
+	"github.com/H0RlZ0N/onvif/device"
 )
 
 // Call_CreateCertificate forwards the call to dev.CallMethod() then parses the payload of the reply as a CreateCertificateResponse.

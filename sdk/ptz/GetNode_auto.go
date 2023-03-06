@@ -7,9 +7,9 @@ package ptz
 import (
 	"context"
 	"github.com/juju/errors"
-	"github.com/use-go/onvif"
-	"github.com/use-go/onvif/sdk"
-	"github.com/use-go/onvif/ptz"
+	"github.com/H0RlZ0N/onvif"
+	"github.com/H0RlZ0N/onvif/sdk"
+	"github.com/H0RlZ0N/onvif/ptz"
 )
 
 // Call_GetNode forwards the call to dev.CallMethod() then parses the payload of the reply as a GetNodeResponse.
