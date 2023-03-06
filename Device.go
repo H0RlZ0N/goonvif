@@ -98,6 +98,10 @@ func (dev *Device) GetDeviceInfo() DeviceInfo {
 	return dev.info
 }
 
+func (dev *Device) GetDeviceParams() DeviceParams {
+	return dev.params
+}
+
 func readResponse(resp *http.Response) string {
 	b, err := ioutil.ReadAll(resp.Body)
 	if err != nil {

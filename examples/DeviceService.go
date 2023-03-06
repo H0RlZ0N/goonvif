@@ -25,7 +25,7 @@ func main() {
 	}
 	log.Printf("------> devlist num: %v", len(devlist))
 	for _, dev := range devlist {
-		log.Printf("------> DeviceInfo: %v", dev)
+		log.Printf("------> DeviceInfo: %v", dev.GetDeviceParams().Xaddr)
 	}
 
 	//Getting an camera instance
