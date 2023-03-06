@@ -7,13 +7,13 @@ package ptz
 import (
 	"context"
 	"github.com/juju/errors"
-	"github.com/H0RlZ0N/onvif"
-	"github.com/H0RlZ0N/onvif/sdk"
-	"github.com/H0RlZ0N/onvif/ptz"
+	"github.com/H0RlZ0N/goonvif"
+	"github.com/H0RlZ0N/goonvif/sdk"
+	"github.com/H0RlZ0N/goonvif/ptz"
 )
 
 // Call_GetStatus forwards the call to dev.CallMethod() then parses the payload of the reply as a GetStatusResponse.
-func Call_GetStatus(ctx context.Context, dev *onvif.Device, request ptz.GetStatus) (ptz.GetStatusResponse, error) {
+func Call_GetStatus(ctx context.Context, dev *goonvif.Device, request ptz.GetStatus) (ptz.GetStatusResponse, error) {
 	type Envelope struct {
 		Header struct{}
 		Body   struct {

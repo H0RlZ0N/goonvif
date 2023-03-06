@@ -7,13 +7,13 @@ package device
 import (
 	"context"
 	"github.com/juju/errors"
-	"github.com/H0RlZ0N/onvif"
-	"github.com/H0RlZ0N/onvif/sdk"
-	"github.com/H0RlZ0N/onvif/device"
+	"github.com/H0RlZ0N/goonvif"
+	"github.com/H0RlZ0N/goonvif/sdk"
+	"github.com/H0RlZ0N/goonvif/device"
 )
 
 // Call_SetDNS forwards the call to dev.CallMethod() then parses the payload of the reply as a SetDNSResponse.
-func Call_SetDNS(ctx context.Context, dev *onvif.Device, request device.SetDNS) (device.SetDNSResponse, error) {
+func Call_SetDNS(ctx context.Context, dev *goonvif.Device, request device.SetDNS) (device.SetDNSResponse, error) {
 	type Envelope struct {
 		Header struct{}
 		Body   struct {

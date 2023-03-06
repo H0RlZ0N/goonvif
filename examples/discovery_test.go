@@ -9,9 +9,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/H0RlZ0N/onvif"
-	"github.com/H0RlZ0N/onvif/device"
-	discover "github.com/H0RlZ0N/onvif/ws-discovery"
+	"github.com/H0RlZ0N/goonvif"
+	"github.com/H0RlZ0N/goonvif/device"
+	discover "github.com/H0RlZ0N/goonvif/ws-discovery"
 	"github.com/beevik/etree"
 )
 

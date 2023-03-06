@@ -7,13 +7,13 @@ package media
 import (
 	"context"
 	"github.com/juju/errors"
-	"github.com/H0RlZ0N/onvif"
-	"github.com/H0RlZ0N/onvif/sdk"
-	"github.com/H0RlZ0N/onvif/media"
+	"github.com/H0RlZ0N/goonvif"
+	"github.com/H0RlZ0N/goonvif/sdk"
+	"github.com/H0RlZ0N/goonvif/media"
 )
 
 // Call_AddAudioOutputConfiguration forwards the call to dev.CallMethod() then parses the payload of the reply as a AddAudioOutputConfigurationResponse.
-func Call_AddAudioOutputConfiguration(ctx context.Context, dev *onvif.Device, request media.AddAudioOutputConfiguration) (media.AddAudioOutputConfigurationResponse, error) {
+func Call_AddAudioOutputConfiguration(ctx context.Context, dev *goonvif.Device, request media.AddAudioOutputConfiguration) (media.AddAudioOutputConfigurationResponse, error) {
 	type Envelope struct {
 		Header struct{}
 		Body   struct {

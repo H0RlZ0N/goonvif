@@ -7,13 +7,13 @@ package ptz
 import (
 	"context"
 	"github.com/juju/errors"
-	"github.com/H0RlZ0N/onvif"
-	"github.com/H0RlZ0N/onvif/sdk"
-	"github.com/H0RlZ0N/onvif/ptz"
+	"github.com/H0RlZ0N/goonvif"
+	"github.com/H0RlZ0N/goonvif/sdk"
+	"github.com/H0RlZ0N/goonvif/ptz"
 )
 
 // Call_GetPresetTour forwards the call to dev.CallMethod() then parses the payload of the reply as a GetPresetTourResponse.
-func Call_GetPresetTour(ctx context.Context, dev *onvif.Device, request ptz.GetPresetTour) (ptz.GetPresetTourResponse, error) {
+func Call_GetPresetTour(ctx context.Context, dev *goonvif.Device, request ptz.GetPresetTour) (ptz.GetPresetTourResponse, error) {
 	type Envelope struct {
 		Header struct{}
 		Body   struct {

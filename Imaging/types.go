@@ -1,8 +1,8 @@
 package imaging
 
 import (
-	"github.com/H0RlZ0N/onvif/xsd"
-	"github.com/H0RlZ0N/onvif/xsd/onvif"
+	"github.com/H0RlZ0N/goonvif/xsd"
+	"github.com/H0RlZ0N/goonvif/xsd/onvif"
 )
 
 type GetServiceCapabilities struct {

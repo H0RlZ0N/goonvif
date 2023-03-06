@@ -3,8 +3,8 @@ package wsdiscovery
 import (
 	"strings"
 
+	"github.com/H0RlZ0N/goonvif/gosoap"
 	"github.com/beevik/etree"
-	"github.com/H0RlZ0N/onvif/gosoap"
 )
 
 func buildProbeMessage(uuidV4 string, scopes, types []string, nmsp map[string]string) gosoap.SoapMessage {

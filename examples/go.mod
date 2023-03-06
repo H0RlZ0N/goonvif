@@ -3,9 +3,11 @@ module onviftest
 go 1.18
 
 require (
+	github.com/H0RlZ0N/goonvif v0.0.0-20230306081255-6413297bcdcb
 	github.com/beevik/etree v1.1.0
-	github.com/H0RlZ0N/onvif v0.0.1
 )
+
+replace github.com/H0RlZ0N/goonvif => ../
 
 require (
 	github.com/elgs/gostrgen v0.0.0-20161222160715-9d61ae07eeae // indirect

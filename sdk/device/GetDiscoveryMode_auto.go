@@ -7,13 +7,13 @@ package device
 import (
 	"context"
 	"github.com/juju/errors"
-	"github.com/H0RlZ0N/onvif"
-	"github.com/H0RlZ0N/onvif/sdk"
-	"github.com/H0RlZ0N/onvif/device"
+	"github.com/H0RlZ0N/goonvif"
+	"github.com/H0RlZ0N/goonvif/sdk"
+	"github.com/H0RlZ0N/goonvif/device"
 )
 
 // Call_GetDiscoveryMode forwards the call to dev.CallMethod() then parses the payload of the reply as a GetDiscoveryModeResponse.
-func Call_GetDiscoveryMode(ctx context.Context, dev *onvif.Device, request device.GetDiscoveryMode) (device.GetDiscoveryModeResponse, error) {
+func Call_GetDiscoveryMode(ctx context.Context, dev *goonvif.Device, request device.GetDiscoveryMode) (device.GetDiscoveryModeResponse, error) {
 	type Envelope struct {
 		Header struct{}
 		Body   struct {
