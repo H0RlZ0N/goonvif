@@ -3,12 +3,13 @@ package sdk
 import (
 	"context"
 	"encoding/xml"
-	"github.com/juju/errors"
-	"github.com/rs/zerolog"
 	"io/ioutil"
 	"net/http"
 	"os"
 	"time"
+
+	"github.com/juju/errors"
+	"github.com/rs/zerolog"
 )
 
 var (
