@@ -3,9 +3,7 @@ package main
 import (
 	"context"
 	"log"
-	"net"
 	"net/http"
-	"strings"
 
 	"github.com/H0RlZ0N/goonvif"
 	"github.com/H0RlZ0N/goonvif/device"
@@ -22,7 +20,7 @@ const (
 func main() {
 	ctx := context.Background()
 
-	netinfos, _ := net.Interfaces()
+	/* netinfos, _ := net.Interfaces()
 	for _, netinfo := range netinfos {
 		if strings.Contains(netinfo.Flags.String(), "up") && !strings.Contains(netinfo.Flags.String(), "loopback") && !strings.Contains(netinfo.Name, "VMware") {
 			log.Printf("------> net Name: %v Flags: %v", netinfo.Name, netinfo.Flags)
@@ -35,7 +33,7 @@ func main() {
 				log.Printf("------> DeviceInfo: %v", dev.GetDeviceParams().Xaddr)
 			}
 		}
-	}
+	} */
 
 	//Getting an camera instance
 	dev, err := goonvif.NewDevice(goonvif.DeviceParams{
@@ -45,17 +43,14 @@ func main() {
 		HttpClient: new(http.Client),
 	})
 	if err != nil {
-		panic(err)
+		log.Printf("-----> err: %v\n", err)
+		return
 	}
 
 	//Preparing commands
-	systemDateAndTyme := device.GetSystemDateAndTime{}
-	getCapabilities := device.GetCapabilities{Category: "All"}
-	getDeviceInfo := device.GetDeviceInformation{}
-	getProfiles := media.GetProfiles{}
-	getStreamUri := media.GetStreamUri{}
 
 	//Commands execution
+	/* systemDateAndTyme := device.GetSystemDateAndTime{}
 	systemDateAndTymeResponse, err := devsdk.Call_GetSystemDateAndTime(ctx, dev, systemDateAndTyme)
 	if err != nil {
 		log.Println(err)
@@ -63,6 +58,8 @@ func main() {
 		log.Printf("---> SystemDateAndTime DateTimeType: %v\n", systemDateAndTymeResponse.SystemDateAndTime.DateTimeType)
 		log.Printf("---> SystemDateAndTime TimeZone: %v\n", systemDateAndTymeResponse.SystemDateAndTime.TimeZone)
 	}
+
+	getCapabilities := device.GetCapabilities{Category: "All"}
 	getCapabilitiesResponse, err := devsdk.Call_GetCapabilities(ctx, dev, getCapabilities)
 	if err != nil {
 		log.Println(err)
@@ -73,9 +70,12 @@ func main() {
 		log.Printf("---> Capabilities Imaging: %v\n", getCapabilitiesResponse.Capabilities.Imaging.XAddr)
 		log.Printf("---> Capabilities Media: %v\n", getCapabilitiesResponse.Capabilities.Media.XAddr)
 		log.Printf("---> Capabilities DeviceIO: %v\n", getCapabilitiesResponse.Capabilities.Extension.DeviceIO.XAddr)
+		log.Printf("---> Capabilities VideoSources: %v\n", getCapabilitiesResponse.Capabilities.Extension.DeviceIO.VideoSources)
+		log.Printf("---> Capabilities AudioSources: %v\n", getCapabilitiesResponse.Capabilities.Extension.DeviceIO.AudioSources)
 
-	}
+	} */
 
+	getDeviceInfo := device.GetDeviceInformation{}
 	getDeviceInfoResponse, err := devsdk.Call_GetDeviceInformation(ctx, dev, getDeviceInfo)
 	if err != nil {
 		log.Println(err)
@@ -86,6 +86,8 @@ func main() {
 		log.Printf("---> DeviceInfo SerialNumber: %v\n", getDeviceInfoResponse.SerialNumber)
 	}
 
+	getProfiles := media.GetProfiles{}
+	getStreamUri := media.GetStreamUri{}
 	getProfilesResponse, err := medsdk.Call_GetProfiles(ctx, dev, getProfiles)
 	if err != nil {
 		log.Println(err)

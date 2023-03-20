@@ -30,6 +30,9 @@ func ReadAndParse(ctx context.Context, httpReply *http.Response, reply interface
 		Int("status", httpReply.StatusCode).
 		Str("action", tag).
 		Msg("RPC")
+	if httpReply.StatusCode != 200 {
+		return errors.Errorf("http reply status code: [%v] %v", httpReply.StatusCode, httpReply.Status)
+	}
 	// TODO(jfsmig): extract the deadline from ctx.Deadline() and apply it on the reply reading
 	if b, err := ioutil.ReadAll(httpReply.Body); err != nil {
 		return errors.Annotate(err, "read")
